@@ -1,2 +1,2 @@
 # portfolio
-UX / UI Design &amp; Web Publishing Portfolio
+## 홈페이지: https://ddirim.github.io/portfolio/
