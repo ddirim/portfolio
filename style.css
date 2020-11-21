@@ -106,8 +106,6 @@ section#aboutme {
 
 .fa-hand-paper {
   /* 🖐 */
-  padding: 0 20px;
-  /* color: gold; */
   animation-duration: 2.5s;
   animation-timing-function: ease;
   animation-delay: 0s;
@@ -163,6 +161,24 @@ section#skills > .title {
   font-size: 18px;
 }
 
+.fa-thumbs-up {
+  animation-name: baam;
+  animation-duration: 2.5s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  transform: scale(1.2);
+}
+
+@keyframes baam {
+  /* 20% { transform: scale(0.8)} */
+  10% { transform: scale(0.6);}
+  20% { transform: scale(1.2)}
+}
+
 .skill_1 {
   margin-bottom: 60px;
 }
@@ -170,8 +186,6 @@ section#skills > .title {
 .skill_1 > li {
   list-style-type: square;
 }
-
-
 
 .skill_2 > li {
   list-style-type: circle;
@@ -221,26 +235,29 @@ section#works > .title {
 }
 
 #works .works_items {
-  /* text-align: center; */
-  /* padding-top: 60px; */
-  width: 960px;
-  margin: 0 auto;
   /* outline: 1px solid blue; */
-  overflow: hidden;
+  display: inline-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  padding: 0 5%;
 }
 
 #works .item {
+  /* outline: 1px solid red; */
+  background: #eeeeee;
+  margin-top: 40px;
   width: 200px;
   height: 200px;
-  background: #eeeeee;
-  float: left;
-  margin: 40px 20px;
+  /* align-items: baseline; */
 }
 
 h1.big_typo {
   color: transparent;
   font-size: 100px;
-  -webkit-text-stroke: 2px #666;
+  -webkit-text-stroke: 2px #7c7c7c;
   padding: 40px 0;
   padding-top: 20vh;
 }
@@ -306,3 +323,99 @@ section#contact .fa-laugh-wink {
   animation-name: heartbeat;
   color: rgb(255, 82, 82);
 }
+
+
+/* mobile 세로 화면 미디어쿼리 */
+@media screen and (max-width: 767px) {
+section#main > .header_title {
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+section#main > .greeting {
+  font-size: 30px;
+}
+ 
+.title {
+  padding: 0;
+  font-size: 30px;
+}
+
+p, li {
+  font-size: 14px;
+}
+
+#aboutme > div {
+  border-left: none;
+  margin-left: 0;
+  margin-top: 10vh;
+  padding-left: 0;
+}
+
+section {
+  padding-top: 5vh;
+  padding: 5vh 30px 0 30px;
+
+}
+
+section#skills > .title {
+  text-align: left;
+}
+
+#skills > div {
+  padding-left: 10px;
+  line-height: 2.2;
+  margin-left: 0;
+}
+
+section#works {
+  padding: 5vh 0 0 0;
+}
+
+#works > .title {
+  font-size: 26px;
+}
+
+#works button {
+  font-size: 12px;
+  margin-right: 0px;
+  width: 18%;
+}
+
+#works button.active,
+#works button:hover {
+  font-size: 14px;
+}
+
+#works .works_items {
+margin-left: 0;
+width: 100%;
+padding: 0;
+justify-content: space-between;
+}
+
+#works .item {
+width: 120px;
+height: 120px;
+margin-top: 10px;
+
+
+}
+
+section#contact {
+  padding: 0;
+}
+
+section#contact > .title {
+padding: 100px 30px 0 30px;
+text-align: left;
+}
+
+#contact > div {
+  margin-left: 0;
+  float: left;
+  padding: 50px 30px 0 40px;
+}
+
+} /* mobile 미디어쿼리 */
