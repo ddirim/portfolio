@@ -20,13 +20,13 @@ section {
   /* border-bottom: 1px solid black; */
   padding-top: 10vh;
   padding-left: 5%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .title {
   font-size: 40px;
   font-weight: 400;
-  float: left;
+  /* float: left; */
   letter-spacing: 3px;
   line-height: 1.7;
   padding: 0 100px;
@@ -124,10 +124,9 @@ section#aboutme {
 }
 
 #aboutme > div {
-  float: left;
+  /* float: left; */
   margin-top: 5vh;
   margin-left: 46%;
-  /* background: #fafafa; */
   border-left: 1px solid #adadad;
   padding-left: 40px;
 }
@@ -135,7 +134,6 @@ section#aboutme {
 #aboutme > div > p {
   padding-bottom: 40px;
   line-height: 1.8;
-  /* letter-spacing: 0.5px; */
 }
 
 #aboutme > div > p:last-child {
