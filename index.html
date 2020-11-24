@@ -24,9 +24,27 @@
 </head>
 
 <body>
+  <a href="#" class="btn_top">top</a>
 
-  <section id="main">
-    <p class="header_title en">Narim's Portfolio</p>
+<section id="main">
+    <header>
+      <p class="header_title en">Narim's Portfolio</p>
+
+      <div class="btn_menu">
+        <div class="hamburger"></div>
+      </div>
+      <nav>
+        <ul class="en">
+          <li><a href="#aboutme">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+
     <p class="greeting">
       안녕하세요!<br>
       저는 박나림입니다.
@@ -42,14 +60,10 @@
   </section>
 
   <section id="aboutme">
-    <h3 class="title"
-    data-aos="fade-up"
-    data-aos-delay="100"
-    data-aos-offset="300" data-aos-duration="900">
-    반갑습니다!
-    <i
-        class="far fa-hand-paper fa-2x"></i><br>
-        저는요- </i>
+    <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-offset="300" data-aos-duration="900">
+      반갑습니다!
+      <i class="far fa-hand-paper fa-2x"></i><br>
+      저는요- </i>
     </h3>
 
     <div data-aos="fade-up" data-aos-delay="1200" data-aos-duration="900">
@@ -74,7 +88,7 @@
     </div>
   </section>
 
-  <section id="skills">
+ <section id="skills">
     <h3 class="title" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">
       <b>제가 잘하는 것</b>을<br>
       소개합니다 <i class="far fa-thumbs-up"></i>
@@ -99,8 +113,8 @@
     </div>
   </section>
 
-  <section id="works">
-    <h3 class="title" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1000">
+ <section id="works">
+    <h3 class="title" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1500">
       이런 것들을 작업했어요!
     </h3>
 
@@ -113,7 +127,7 @@
     </div>
 
     <div class="works_items">
-      <figure class="item">item 1</p></figure>
+      <figure class="item">item 1</figure>
       <figure class="item">item 2</figure>
       <figure class="item">item 3</figure>
       <figure class="item">item 4</figure>
@@ -127,40 +141,57 @@
 
 
 
-  <h1 class="big_typo">함께 일할 멋진 인재를 찾고 계신가요?</h1>
 
-  <section id="contact">
+<section id="contact">
+    <h1 class="big_typo">함께 일할 멋진 인재를 찾고 계신가요?</h1>
     <h3 class="title" data-aos="zoom-in-up" data-aos-delay="1300" data-aos-duration="1000">
       그렇다면<br>
       저는 어떠세요? <i class="far fa-laugh-wink fa-spin"></i></h3>
 
-      <div
-      data-aos="zoom-in-up" data-aos-delay="1300" data-aos-duration="1000">
-        <ul>
-          <li>항상 성장하면서도 겸손을 잃지 않는</li>
-          <li>좋아하는 일을 하기때문에 즐기는</li>
-          <li>3</li>
-          <li>4</li>
-        </ul>
-      </div>
-
-
-    <!-- <img class="eighth_note" src="images/Eighth note icon.svg" alt="">
-    <i class="far fa-kiss-wink-heart fa-5x fa-spin"></i>
-    <i class="far fa-laugh-wink fa-5x"></i>
-    <i class="far fa-laugh-squint fa-3x"></i>
-    <i class="far fa-grin-stars fa-3x fa-spin"></i> -->
-
+    <div data-aos="zoom-in-up" data-aos-delay="1300" data-aos-duration="1000">
+      <ul>
+        <li>항상 성장하면서도 겸손을 잃지 않는</li>
+        <li>좋아하는 일을 하기때문에 즐기는</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
 
     <p class="madeby en">Made by Narim Park <i class="fa fa-heart" aria-hidden="true"></i>
     </p>
   </section>
 
-<!-- fade 효과 라이브러리(AOS) -->
+  <!-- fade 효과 라이브러리(AOS) -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.btn_menu').click(function () {
+        $('.btn_menu').toggleClass('active');
+        $('header ul').toggleClass('active');
+
+      })
+    })
+
+    $(function () {
+      $(document).scroll(function () {
+        var s = $(window).scrollTop();
+        console.log(s);
+
+        if (s >= 900) {
+          $('.btn_top').addClass('show');
+        } else {
+          $('.btn_top').removeClass('show');
+
+        }
+      })
+    });  
+  </script>
+
 </body>
 
 </html>

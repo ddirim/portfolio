@@ -4,11 +4,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+a {
+  color: #000;
+  text-decoration: none;
+}
 html {
   font-size: 62.5%;
 }
 body {
-  font-family: 'Noto Sans KR', sans-serif;}
+  font-family: 'Noto Sans KR', sans-serif;
+  scroll-behavior: smooth;
+}
 .en {
 /* 영문 폰트 */
 font-family: 'Hammersmith One', sans-serif;
@@ -21,11 +27,39 @@ section {
   height: 110vh;
   padding: 10vh 5%;
 }
+section#contact {
+  padding: 0;
+}
 .title {
   font-weight: 400;
   letter-spacing: 0.3rem;
   line-height: 1.7;
 }
+
+.btn_top {
+  display: none;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  bottom: 4rem;
+  right: 4rem;
+  width: 8rem;
+  height: 8rem;
+  line-height: 8rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #9b9b9b;
+  background: #f0f0f0;
+  border-radius: 25%;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, .08),
+               -6px -6px 12px rgba(255, 255, 255, 1);
+  transition: 1s;
+}
+.btn_top.show {
+  display: block;
+}
+
+
 section#main {
   background-image: linear-gradient(to top left, #f2dafd 0%, #eaf0e9 100%);
   height: 100vh;
@@ -33,13 +67,87 @@ section#main {
   position: relative;
 }
 
-section#main > .header_title {
+header {
+  height: 60px;
+  outline: 1px solid red;
+  position: relative;
+  padding: 0 2rem;
+}
+header > .header_title {
+  outline: 1px solid blue;
+  text-align: center;
+  width: 250px;
   font-size: 2rem;
+  padding: 1.75rem 0;
   letter-spacing: 0.3rem;
-  padding: 2rem;
   font-weight: 300;
 }
 
+header ul {
+  position: absolute;
+  top: 1.9rem;
+}
+header ul.active {
+  right:0;
+}
+header li {
+  float: left;
+  list-style-type: none;
+}
+
+header a {
+  padding: 1rem 5.5rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+header > .btn_menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 1.3rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  cursor: pointer;
+}
+.hamburger {
+  height: 5px;
+  width: 3.4rem;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: .5s;
+  /* border-radius: 25px; */
+}
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  height: 5px;
+  width: 3.4rem;
+  position: absolute;
+  background: #000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  transition: .5s;
+}
+.hamburger::before {
+  top: -12px;
+}
+.hamburger::after {
+  top: 12px;
+}
+.btn_menu.active .hamburger{
+  background-color:rgba(0, 0, 0, 0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+.btn_menu.active .hamburger::before{
+  top:0;
+  transform: rotate(45deg);
+}
+.btn_menu.active .hamburger::after{
+  top:0;
+  transform: rotate(135deg);
+}
 section#main > .greeting {
   /* 안녕하세요! */
   font-size: 4.4rem;
@@ -171,6 +279,7 @@ section#contact > div {
 
 section#works > .title {
   text-align: center;
+  /* float: left; */
 }
 
 section#works button {
@@ -221,13 +330,14 @@ h1.big_typo {
   color: transparent;
   font-size: 10rem;
   -webkit-text-stroke: 2px #7c7c7c;
-  padding: 20vh 0 1rem 0;
+  padding: 5vh 0 1rem 0;
 }
 
 section#contact {
   position: relative;
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-  padding: 10vh 0 0 0;
+  /* padding: 10vh 0 0 0; */
+  padding: 0;
 }
 section#contact > .title {
   padding-top: 100px;
@@ -243,12 +353,13 @@ section#contact > div {
   margin-left: 54%;
 }
 .madeby {
+  outline: 1px solid blue;
   width: 100%;
   text-align: center;
   position: absolute;
-  bottom:0;
+  bottom: 2rem;
   font-size: 19px;
-  padding: 20px 0;
+
 }
 
 @keyframes heartbeat {
@@ -274,7 +385,9 @@ section#contact > div {
 
 @media (min-width: 1200px) {
   /* 데스크탑 일반(가로) */
-  
+  header ul {
+      left: 35vw;
+  }
   .title {
     font-size: 4.6rem;
     padding-left: 5vw;
@@ -303,6 +416,14 @@ section#contact > div {
   p, li {
     font-size: 1.6rem;
   }
+  header ul {
+    left: 35vw;
+  }
+  header a {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .title {
     font-size: 3.8rem;
   }
@@ -332,6 +453,36 @@ section#contact > div {
 /* 태블릿 세로 */
 p, li {
   font-size: 1.6rem;
+}
+header > .btn_menu {
+  display: block;
+  position: fixed;
+  z-index: 3;
+}
+header ul {
+  /* display: none; */
+  position: fixed;
+  z-index: 2;
+  width: 40vw;
+  height: 100vh;
+  top: 0;
+  right: -40vw;
+  background: #fff;
+  padding-top: 8rem;
+  padding-right: 1rem;
+  box-shadow: -6px -6px 12px rgba(0, 0, 0, .08);
+  transition: .5s;
+}
+header li {
+  float: none;
+  text-align: right;
+  margin-left: 0;
+}
+header a {
+  display: block;
+  font-size: 3rem;
+  width: 100%;
+  padding: 3rem 0;
 }
 section#main > .header_title {
   font-size: 1.8rem;
@@ -385,18 +536,61 @@ section#contact > div {
   p,li {
     font-size: 1.4rem;
   }
-  section#main > .header_title {
+  header {
+    height: 60px;
+    outline: 1px solid red;
+    position: relative;
+    padding: 0 2rem;
+  }
+  header > .header_title {
+    width: 20rem;
     font-size: 1.6rem;
-    letter-spacing: 0.3rem;
-    padding: 2rem;
-    font-weight: 300;
-    text-align: center;
+    padding: 2rem 0;
+  }
+
+  header > .btn_menu {
+    display: block;
+    position: fixed;
+    z-index: 3;
+  }
+  header ul {
+    /* display: none; */
+    position: fixed;
+    z-index: 2;
+    width: 40vw;
+    height: 100vh;
+    top: 0;
+    right: -40vw;
+    background: #fff;
+    padding-top: 8rem;
+    padding-right: 1rem;
+    box-shadow: -6px -6px 12px rgba(0, 0, 0, .08);
+    transition: .5s;
+  }
+  header li {
+    float: none;
+    text-align: right;
+    margin-left: 0;
+  }
+  header a {
+    display: block;
+    font-size: 3rem;
+    width: 100%;
+    padding: 3rem 0;
   }
   section#main > .greeting {
    font-size: 3.6rem;
   }
   .title {
     font-size: 3rem;
+  }
+  .btn_top {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1.6rem;
+  right: 1rem;
+  bottom: 1rem;
   }
   section#aboutme > div,
   section#skills > div,
