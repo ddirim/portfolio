@@ -509,14 +509,13 @@ section#aboutme > .content {
     font-size: 9.4rem;
   }
   section#aboutme {
-    height: 110vh;
+    height: 120vh;
   }
   section#skills {
-    height: 100vh;
+    height: 110vh;
   }
   section#aboutme, section#skills {
     padding-top: 20vh;
-    padding-bottom: 10vh;  
   }
   section#aboutme > .content {
     margin-top: 3rem;
@@ -535,7 +534,7 @@ section#aboutme > .content {
   section#skills > .content {
     display: inline-block;
     width: 40vw;
-  }
+    }
   section#skills > .content {
     margin-left: 5rem;
   }
@@ -623,8 +622,8 @@ section#contact ul {
   }
 #works .itme {
   margin-top: 20px;
-  width: 23vmin;
-  height: 23vmin;
+  width: 25vmin;
+  height: 25vmin;
 }
 section#works button {
   width: 15rem;
@@ -722,21 +721,21 @@ h1.big_typo {
     width: 18%;
     background: #efefef;
   }
-
   .sort_btns {
     background: #efefef;
   }
-  #works button.on,
-  #works button:hover {
+  section#works button:hover,
+  section#works button.on {
     font-size: 1.4rem;
   }
   #works .item_wrap {
     width: 100%;
   }
   #works .item {
-    margin-top: 20px;
-    width: 23vmin;
-    height: 23vmin;
+    border: 1px solid #fff;
+    width: 25vmin;
+    height: 25vmin;
+    font-size: 1.4rem;
   }
 
   .vertical_text {
@@ -751,6 +750,7 @@ h1.big_typo {
     font-size: 4rem;
     -webkit-text-stroke: 1px #7c7c7c;
     text-shadow: 0 1.5rem 0 #e7e7e7;
+    /* padding: 0 1rem; */
   }
   section#contact > .title {
     margin-top: 40rem;
