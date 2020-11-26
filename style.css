@@ -473,15 +473,17 @@ cursor: pointer;
 }
 section#aboutme > .content {
   margin-top: 3rem;
+  width: 35vw;
 }
   section#aboutme > .content,
   section#skills > .content {
     display: inline-block;
-    width: 35vw;
+    /* outline: 1px solid red; */
   }
 
   section#skills > .content {
     margin-left: 5rem;
+    width: 32vw;
   }
   #works .item_wrap {
   width: 60%;
