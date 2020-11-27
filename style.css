@@ -4,8 +4,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'locus_sangsang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.gra_circle {
+  position: absolute;
+  /* z-index: -1; */
+  top: -90%;
+  right: -30%;
+  border-radius: 50%;
+  width: 160rem;
+  height: 160rem;
+  background: linear-gradient(to left bottom, #f8c8e0, #f8f8f8);
+
+}
 p, li {
   font-size: 1.8rem;
+  color: #353535;
+  letter-spacing: 0.5px;
+  
 }
 li {
   list-style-type: none;
@@ -14,6 +34,7 @@ a {
   color: #000;
   text-decoration: none;
 }
+b { color: #252525;}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -30,10 +51,18 @@ section {
   position: relative;
   overflow: hidden;
 }
+@font-face {
+  font-family: 'Recipekorea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 .title {
   font-weight: 400;
+  /* font-family: 'Recipekorea'; */
   letter-spacing: 0.3rem;
   line-height: 1.7;
+
 }
 .btn_top {
   display: none;
@@ -47,16 +76,15 @@ section {
   line-height: 8rem;
   font-size: 2rem;
   /* font-weight: bold; */
-  color: #747474;
-  border-radius: 25%;
-  background: linear-gradient(145deg, #f8f8f8, #d1d1d1);
-  box-shadow:  7px 7px 20px #c5c5c5, 
-               -7px -7px 20px rgba(255, 255, 255, 0.8);
-  transition: 1s;
+  color: #c9c9c9;
+  border-radius: 30%;
+  border: 2px solid #c9c9c9;
+  transition: .2s;
 }
 .btn_top:hover {
-  background: linear-gradient(145deg, #d1d1d1, #f8f8f8);
-}
+  background: #c9c9c9;
+  color: #fff;
+ }
 .btn_top.show {
   display: block;
 }
@@ -186,6 +214,7 @@ header > .btn_menu {
   opacity: 0.6;
 }
 .scroll_down > p {
+  color: #858585;
   animation-name: blink;
   animation-duration: 1s;
   animation-timing-function: ease;
@@ -224,19 +253,19 @@ section#aboutme {
 section#works {
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
-section#aboutme > div > p {
+section#aboutme > .content > p {
   padding-bottom: 4rem;
   line-height: 1.8;
 }
-section#aboutme > div > p:last-child {
+section#aboutme > .content > p:last-child {
   padding-bottom: 0;
 }
 
 section#skills {
   background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
 }
-section#skills > div li,
-section#contact > div li{
+section#skills > .content li,
+section#contact > .content li{
   padding-bottom: 2rem;
 }
 
@@ -274,6 +303,7 @@ section#works > .title {
 
 .sort_btns {
   text-align: center;
+  padding-bottom: 3rem;
   /* outline: 1px solid red; */
 }
 section#works button {
@@ -288,25 +318,33 @@ section#works button {
   outline: none;
 }
 section#works button:hover,
-section#works button.active {
+section#works button.on {
   font-weight: bold;
   font-size: 1.8rem;
 }
 
-#works .works_items {
+#works .item_wrap {
   /* outline: 1px solid blue; */
-  display: inline-flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: center;
 }
 
 #works .item {
-  background: #eeeeee;
-  margin-top: 5vh;
+  /* background: #eeeeee; */
+  font-size: 1.6rem;
+  border: 1px solid #fff;
   width: 20vmin;
   height: 20vmin;
+  transition: .3s;
 }
+#works .item:hover {
+font-size: 1.8rem;
+font-weight: bold;
+}
+.mobile { background: #F5CEDC;}
+.pc {background: #F5F0C1;}
+.card { background: #EFDAF4;}
+.banner { background: #C1F5C5;}
+.responsive { background: #D8CEF5;}
+.etc { background: #ddd;}
 
 h1.big_typo {
   color: transparent;
@@ -316,6 +354,10 @@ h1.big_typo {
   transform: rotateX(20deg);
   text-shadow: 0 40px 0 #e7e7e7;
   text-align: center;
+}
+
+h1.big_typo > span {
+  /* color: rgb(122, 122, 122); */
 }
 
 .vertical_text {
@@ -352,12 +394,13 @@ section#contact > .title {
   font-weight: bold;
 
  }
-section#contact > div {
+section#contact > .content {
   /* outline: 1px solid purple; */
   margin-top: 8rem;
   letter-spacing: 0.1rem;
   width: 350px;
   margin-left: calc((100vw - 350px)/2);
+  /* outline: 1px solid red; */
 }
 section#contact li {
   list-style-type: none;
@@ -365,15 +408,52 @@ section#contact li {
 .fa-check {
   padding-right: 1rem;
 }
+
+.contact_info {
+  text-align: center;
+  margin: 22vh 0 20vh 0;
+  display: block;
+}
+.contact_info > p {
+  margin-bottom: 2rem;
+}
 .mailto {
-text-align: center;
-display: block;
-margin: 15vh 0 20vh 0;
-width: 50rem;
-margin-left: calc((100vw - 50rem)/2);
+  display: block;
+  margin-left: calc((100vw - 54rem)/2);
+width: 54rem;
+height: 10rem;
+line-height: 10rem;
 font-size: 4.8rem;
+/* outline: 1px solid purple; */
+transition: .5s;
+}
+.mailto {
+  position: relative;
+
 }
 
+.mailto svg, .mailto svg rect{
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  fill: transparent;
+}
+.mailto svg rect{
+  stroke: #000;
+  stroke-width: 6;
+  transition: 1.5s;
+  stroke-dasharray: 128rem;
+  stroke-dashoffset: 128rem;
+}
+.mailto:hover svg rect{
+  stroke-dashoffset: 0;
+}
+.mailto:hover{
+  background-color: #fff;
+  transition-delay: 1.3s;
+}
 .madeby {
   width: 100%;
   text-align: center;
@@ -414,10 +494,10 @@ font-size: 4.8rem;
     font-size: 10rem;
   }
   section#aboutme {
-    height: 110vh;
+    /* height: 110vh; */
   }
   section#skills {
-    height: 100vh;
+    /* height: 100vh; */
   }
   section#aboutme, section#skills {
     padding-top: 20vh;
@@ -432,19 +512,22 @@ font-size: 4.8rem;
     text-align: right;
     float: left;
 }
-section#aboutme > div {
+section#aboutme > .content {
   margin-top: 3rem;
+  width: 35vw;
 }
-  section#aboutme > div,
-  section#skills > div {
+  section#aboutme > .content,
+  section#skills > .content {
     display: inline-block;
-    width: 35vw;
+    padding-bottom: 20vh;
+    /* outline: 1px solid red; */
   }
 
-  section#skills > div {
+  section#skills > .content {
     margin-left: 5rem;
+    width: 32vw;
   }
-  #works .works_items {
+  #works .item_wrap {
   width: 60%;
   margin-left: 20%;
   }
@@ -468,21 +551,21 @@ section#aboutme > div {
     font-size: 9.4rem;
   }
   section#aboutme {
-    height: 110vh;
+    height: 120vh;
   }
   section#skills {
-    height: 100vh;
+    height: 110vh;
   }
   section#aboutme, section#skills {
     padding-top: 20vh;
-    padding-bottom: 10vh;  
   }
-  section#aboutme > div {
+  section#aboutme > .content {
     margin-top: 3rem;
   }
   section#works {
     padding-bottom: 20vh;
   }
+
   section#aboutme > .title,
   section#skills > .title {
     padding-left: 7vw;
@@ -490,18 +573,30 @@ section#aboutme > div {
     text-align: right;
     float: left;
 }
-  section#aboutme > div,
-  section#skills > div {
+  section#aboutme > .content,
+  section#skills > .content {
     display: inline-block;
     width: 40vw;
-  }
-  section#skills > div {
+    }
+  section#skills > .content {
     margin-left: 5rem;
   }
-  #works .works_items {
-    width: 60%;
-    margin-left: 20%;
+  .sort_btns {
+    padding-bottom: 1.5rem;
+  }
+  section#works button {
+    width: 13rem;
+  }
+
+
+  #works .item_wrap {
+    width: 70vw;
+    margin-left: 15vw;
     }
+  #works .item {
+    width: 14vw;
+    height: 14vw;
+  }
     
   h1.big_typo {
     font-size: 8rem;
@@ -566,9 +661,9 @@ section#aboutme > .title,
 section#skills > .title {
 padding: 0;
 }
-section#aboutme > div,
-section#skills > div,
-section#contact > div {
+section#aboutme > .content,
+section#skills > .content,
+section#contact > .content {
   margin-top: 10vh;
 }
 
@@ -577,13 +672,12 @@ section#contact ul {
   padding-left: 1.5rem;
 }
 
-#works .works_items {
+#works .item_wrap {
   width: 100%
   }
-#works .itme {
-  margin-top: 20px;
-  width: 23vmin;
-  height: 23vmin;
+#works .item {
+  width: 25vmin;
+  height: 25vmin;
 }
 section#works button {
   width: 15rem;
@@ -596,7 +690,13 @@ h1.big_typo {
   top: 120rem;
   left: 40vw;
 }
-
+section#contact >.content {
+  width: 36rem;
+  margin-left: calc((100vw - 36rem)/2);
+}
+.contact_info {
+  margin-bottom: 15vh;
+}
 }
 
 @media screen and (max-width: 767px) {
@@ -666,9 +766,9 @@ h1.big_typo {
   bottom: 10vh;
   }
 
-  section#aboutme > div,
-  section#skills > div,
-  section#contact > div {
+  section#aboutme > .content,
+  section#skills > .content,
+  section#contact > .content {
     margin-top: 10vh;
   }
   section#skills ul,
@@ -679,23 +779,24 @@ h1.big_typo {
     font-size: 1.2rem;
     margin-right: 0;
     width: 18%;
-    background: #efefef;
+    background: #ececec;
   }
-
   .sort_btns {
-    background: #efefef;
+    padding-bottom: 0;
+    background: #ececec;
   }
-  #works button.active,
-  #works button:hover {
+  section#works button:hover,
+  section#works button.on {
     font-size: 1.4rem;
   }
-  #works .works_items {
+  #works .item_wrap {
     width: 100%;
   }
   #works .item {
-    margin-top: 20px;
-    width: 23vmin;
-    height: 23vmin;
+    border: 1px solid #fff;
+    width: 25vmin;
+    height: 25vmin;
+    font-size: 1.4rem;
   }
 
   .vertical_text {
@@ -710,16 +811,23 @@ h1.big_typo {
     font-size: 4rem;
     -webkit-text-stroke: 1px #7c7c7c;
     text-shadow: 0 1.5rem 0 #e7e7e7;
+    /* padding: 0 1rem; */
   }
   section#contact > .title {
     margin-top: 40rem;
   }
-  section#contact > div {
-    width: 28rem;
-    margin-left: calc((100vw - 28rem)/2);
+  section#contact > .content {
+    /* outline: 1px solid red; */
+    width: 30rem;
+    margin-left: calc((100vw - 30rem)/2);
+  }
+  .contact_info > p {
+    margin-bottom: 0;
   }
   .mailto {
     font-size: 3rem;
+    height: 6rem;
+    line-height: 6rem;
   }
   .madeby {
     font-size: 1.4rem;

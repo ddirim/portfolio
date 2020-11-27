@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <!-- 구글웹폰트, hammer one -->
   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
-  <!-- 구글웹폰트, kanit -->
+  <!-- 구글웹폰트, kanit(#main_title) -->
   <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
 
   <!-- 구글웹폰트, 한글서체 -->
@@ -21,13 +21,16 @@
   <!-- 사용자 CSS -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- fade 효과 라이브러리(AOS) -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!-- 제이쿼리 cdn -->
+  <!-- 제이쿼리 cdn (위에!!) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="https://kit.fontawesome.com/f4c615dcd8.js" crossorigin="anonymous"></script>
+  <!-- fade 효과 라이브러리(AOS) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <!-- isotope 갤러리 플러그인 -->
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/f4c615dcd8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,7 +61,7 @@
 
     <div class="scroll_down">
       <div class="vertical_line"></div>
-      <img class="icon_mouse" src="images/mouse.svg" alt="scroll down">
+      <img class="icon_mouse" src="icon_mouse.svg" alt="scroll down">
       <p class="en">Scroll Down !</p>
     </div>
 
@@ -68,22 +71,26 @@
     <h3 class="title" data-aos="fade-up" data-aos-delay="100" data-aos-offset="300" data-aos-duration="900">
       반갑습니다!
       <i class="far fa-hand-paper fa-2x"></i><br>
-      UX / UI 디자인 &<br>웹 퍼블리싱<br>-----입니다</i>
+      디자인을 좋아하고<br><ins><b>웹 퍼블리셔</b></ins>가 되고싶은<br>박나림입니다!</i>
     </h3>
+    <!-- <div class="gra_circle"></div> -->
 
-    <div data-aos="fade-up" data-aos-delay="1200" data-aos-duration="900">
-      <p>저는 꼼꼼하고 깔끔한 성격이고, 정리를 잘 합니다. 사소한 작업을 할 때도 레이어 정리와 파일 정리를 신경씁니다. 코드를 작성할 때는 보여지는 결과물(웹페이지)만 그럴듯하게
+    <div class="content" data-aos="fade-up" data-aos-delay="1200" data-aos-duration="900">
+      <p><b>저는 꼼꼼하고 깔끔한 성격이고, 정리를 잘 합니다</b>. 사소한 작업을 할 때도 레이어 정리와 파일 정리를 신경씁니다. 코드를 작성할 때는 보여지는 결과물(웹페이지)만 그럴듯하게
         만드는 것이 아니라, 코드도 깔끔하게 잘 정리해서 작성합니다. 적절한 태그와 속성을 사용하고, 겹치거나 불필요한 코드를 제거하여 최대한 단순하고 이해하기 쉬운 코드를 작성합니다. 이런 습관은 혼자
         작업할 때뿐만 아니라 다른 사람들과의 협업이나 유지보수에 있어서도 꼭 필요하기 때문에 지금부터 잘 들여놔야 하는 습관이라고 생각합니다.
         <!-- 깔끔, 미니멀, 제로웨이스트. -->
       </p>
 
       <p>
-        저는 고양이 한마리를 모시고 있습니다. 유리구슬같은 눈, 통실통실한 주둥이, 아기같은 뒤통수, 솜방망이같은 발… 고양이의 매력은 무궁무진한 것 같아요. 요즘에는 뉴트로, 뉴모피즘의 매력에도 푹 빠졌습니다. 특히, 뉴모피즘 UI를 보면 가슴이 두근거려요! 유행 지난 스타일에 최신 트렌드가 더해져 서로 잘 융합된다는 점이 재밌어요.</i>
+        <b>저는 고양이 한마리를 모시고 있습니다.</b> 유리구슬같은 눈, 통실통실한 주둥이, 아기같은 뒤통수, 솜방망이같은 발… 고양이의 매력은 무궁무진한 것 같아요. <b>요즘에는 뉴트로, 뉴모피즘의
+          매력에도 푹
+          빠졌습니다.</b> 특히, 뉴모피즘 UI를 보면 가슴이 두근거려요! 유행 지난 스타일에 최신 트렌드가 더해져 서로 잘 융합된다는 점이 재밌어요.</i>
 
       <p>
-        '좋아하는 것을 하자.' 저의 좌우명 입니다. 처음에는 잘 못하던 것도 좋아서 계속 하다보면 실력은 자연스럽게 늘게 되고 결국엔 길도 열리게 된다고 생각합니다. 한 번 사는 짧은 인생, 좋아하는 일을
-        하며 즐겁게 살아야 한다고 생각합니다.
+        <b>'좋아하는 것을 하자.'</b> <span>저의 좌우명 입니다. 처음에는 서툴던 것도 좋아서 계속 하다보면 실력은 자연스럽게 늘게 되고 결국엔 길도 열리게 된다고 생각합니다. 한 번 사는 짧은
+          인생, 좋아하는 일을
+          하며 즐겁게 살아야 한다고 생각합니다.</span>
       </p>
     </div>
   </section>
@@ -94,20 +101,19 @@
       소개합니다 <i class="far fa-thumbs-up"></i>
     </h3>
 
-    <div data-aos="fade-left" data-aos-offset="200" data-aos-delay="1000" data-aos-duration="1000">
+    <div class="content" data-aos="fade-left" data-aos-offset="200" data-aos-delay="1000" data-aos-duration="1000">
       <ul class="skill_1">
-        <li><b>HTML5</b>를 이렇게 잘 작성합니다.</li>
-        <li><b>CSS3</b>를 이렇게 잘 작성합니다.</li>
+        <li><b>HTML5</b>를 이용해 상황에 맞는 적절한 태그 및 속성을 사용하며 잘 짜인 구조를 바탕으로 한 탄탄한 코드를 작성합니다.</li>
+        <li><b>CSS3</b>를 이용해 깔끔한 레이아웃과 스타일에 적절한 동적 모션을 더하여 지루하지않은, 그러나 과하지 않은 감각적인 웹페이지를 만들어냅니다.</li>
         <li><b>JavaScript</b>에도 흥미를 가지고 열심히 배워나가는 중입니다.</li>
         <li><b>Adobe Xd</b>를 이용하여 프로토타입, 시안 제작을 능숙히 할 수 있습니다.</li>
-        <li><b>Adobe Photoshop</b>을 이용하여 시안, 카드 및 배너 제작을 할 수 있고,<br>
-          다양한 작품을 보면서 영감을 받고 모작을 만들면서 실력을 키워나가는 중입니다.</li>
+        <li><b>Adobe Photoshop</b>을 이용하여 시안, 카드 및 배너 제작을 할 수 있고, 다양한 작품을 보면서 영감을 받고 모작을 만들어보면서 실력을 키워나가는 중입니다.</li>
       </ul>
 
       <ul class="skill_2">
-        <li>이러이러한 소통능력을 가졌습니다.</li>
-        <li>협업을 위해 누구나 이해하기 쉬운 코드를 작성합니다.</li>
-        <li>사용자 입장에서 편리하고 이해가 쉬운 조작을 위해 항상 고민합니다.</li>
+        <li>사람들의 다양한 의견을 듣고 존중하는 <b>소통능력</b>을 가졌습니다.</li>
+        <li><b>협업</b>을 위해 다른 작업자도 이해하기 쉬운 코드를 작성합니다.</li>
+        <li><b>사용자 입장</b>에서 보다 더 편리하고 쉬운 조작을 위해 항상 고민합니다.</li>
 
       </ul>
     </div>
@@ -119,26 +125,28 @@
     </h3>
 
     <div class="sort_btns">
-      <button class="active">전체</button>
-      <button>모바일</button>
-      <button>PC</button>
-      <button>카드/배너</button>
-      <button>기타</button>
+      <button class="on" data-filter="*">전체</button>
+      <button data-filter=".mobile">모바일</button>
+      <button data-filter=".pc">PC</button>
+      <button data-filter=".card, .banner">카드/배너</button>
+      <button data-filter=".etc">기타</button>
     </div>
 
-    <div class="works_items">
-      <figure class="item">item 1</figure>
-      <figure class="item">item 2</figure>
-      <figure class="item">item 3</figure>
-      <figure class="item">item 4</figure>
-      <figure class="item">item 5</figure>
-      <figure class="item">item 6</figure>
-      <figure class="item">item 7</figure>
-      <figure class="item">item 8</figure>
-      <figure class="item">item 9</figure>
-      <figure class="item">item 10</figure>
-      <figure class="item">item 11</figure>
-      <figure class="item">item 12</figure>
+    <div class="item_wrap">
+      <a class="item mobile" href="https://ddirim.github.io/mobile-wedding-invitation/">#mobile #청첩장</a>
+      <figure class="item mobile">#mobile #경기대학교</figure>
+      <figure class="item mobile">#mobile #가천대학교</figure>
+      <a class="item pc" href="https://ddirim.github.io/myungga/">#PC #리뉴얼 #카페 <br>#커피명가</a>
+      <a class="item pc" href="https://ddirim.github.io/Coffee-Namu/">#PC #리뉴얼 #카페 <br>#커피나무 #팀프로젝트</a>
+      <a class="item pc" href="https://ddirim.github.io/daishin/">#PC #리뉴얼 <br>#대신자산운용<br>#팀프로젝트</a>
+      <a class="item card" href="works/disney_card/index.html">#card #desney #디즈니</a>
+      <figure class="item card">#card</figure>
+      <figure class="item banner">#banner</figure>
+      <figure class="item banner">#banner</figure>
+      <figure class="item responsive">#반응형</figure>
+      <figure class="item responsive">#반응형</figure>
+      <figure class="item etc">#아이콘</figure>
+      <figure class="item etc">#아이콘 #알파벳 <br>#기초도형</figure>
     </div>
 
   </section>
@@ -151,21 +159,31 @@
     <h4 class="vertical_text two">지금....</h4>
     <h4 class="vertical_text three">그렇다면ㅡ</h4>
 
-    <h1 class="big_typo">함께 일할 멋진 인재를 찾고 계신가요?</h1>
+    <h1 class="big_typo">함께 일할 <span>멋진 인재</span>를 찾고 계신가요?</h1>
 
     <h3 class="title">
-      &nbsp;&nbsp;----------- <i class="far fa-laugh-wink fa-spin"></i></h3>
+      이런 사람은 어떠세요? <i class="far fa-laugh-wink fa-spin"></i></h3>
 
-    <div>
+    <div class="content">
       <ul>
-        <li><i class="fas fa-check"></i>항상 성장하면서도 겸손을 잃지 않는</li>
-        <li><i class="fas fa-check"></i>맡은 일을 끝까지 책임감있게 해내는</li>
-        <li><i class="fas fa-check"></i>좋아하는 일을 하기때문에 즐기는</li>
-        <li><i class="fas fa-check"></i></li>
+        <li><i class="fas fa-check"></i>항상 성장하면서도 겸손을 잃지 않는 사람</li>
+        <li><i class="fas fa-check"></i>맡은 일을 끝까지 책임감있게 해내는 사람</li>
+        <li><i class="fas fa-check"></i>좋아하는 일을 하기때문에 즐기는 사람</li>
       </ul>
     </div>
 
-    <span class="mailto en" href="mailto:p_narim@naver.com">p_narim@naver.com</span>
+    <div class="contact_info">
+
+      <p><i class="far fa-hand-point-down"></i> 나누고싶은 얘기가 있으시다면</p>
+      <a class="mailto en" href="mailto:p_narim@naver.com" title="이메일 보내기">
+        <svg>
+          <rect>
+
+          </rect>
+        </svg>
+        p_narim@naver.com
+      </a>
+    </div>
 
 
 
@@ -173,7 +191,6 @@
     <p class="madeby en">Made by Narim Park <i class="fa fa-heart" aria-hidden="true"></i>
     </p>
   </section>
-
   <script>
     // fade 효과 AOS 플러그인 초기화 설정
     AOS.init();
@@ -213,6 +230,22 @@
 
     }
     text.style.textShadow = shadow;
+
+    // isotope 갤러리 플러그인
+    $(document).ready(function () {
+
+      $('.item_wrap').isotope({
+        itemSelector: '.item',
+      });
+
+      // filter items on button click
+      $('.sort_btns').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
+        $('.item_wrap').isotope({ filter: filterValue });
+        $('.sort_btns button').removeClass('on');
+        $(this).addClass('on');
+      });
+    })
   </script>
 
 </body>
