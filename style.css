@@ -4,28 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-@font-face {
-  font-family: 'locus_sangsang';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-.gra_circle {
-  position: absolute;
-  /* z-index: -1; */
-  top: -90%;
-  right: -30%;
-  border-radius: 50%;
-  width: 160rem;
-  height: 160rem;
-  background: linear-gradient(to left bottom, #f8c8e0, #f8f8f8);
-
-}
 p, li {
   font-size: 1.8rem;
-  color: #353535;
-  letter-spacing: 0.5px;
-  
 }
 li {
   list-style-type: none;
@@ -34,7 +14,6 @@ a {
   color: #000;
   text-decoration: none;
 }
-b { color: #252525;}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -51,18 +30,10 @@ section {
   position: relative;
   overflow: hidden;
 }
-@font-face {
-  font-family: 'Recipekorea';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 .title {
   font-weight: 400;
-  /* font-family: 'Recipekorea'; */
   letter-spacing: 0.3rem;
   line-height: 1.7;
-
 }
 .btn_top {
   display: none;
@@ -253,19 +224,19 @@ section#aboutme {
 section#works {
   background-image: linear-gradient(to top, #fdfbfb 0%, #ebedee 100%);
 }
-section#aboutme > .content > p {
+section#aboutme > div > p {
   padding-bottom: 4rem;
   line-height: 1.8;
 }
-section#aboutme > .content > p:last-child {
+section#aboutme > div > p:last-child {
   padding-bottom: 0;
 }
 
 section#skills {
   background-image: linear-gradient(to bottom, #fdfbfb 0%, #ebedee 100%);
 }
-section#skills > .content li,
-section#contact > .content li{
+section#skills > div li,
+section#contact > div li{
   padding-bottom: 2rem;
 }
 
@@ -303,7 +274,6 @@ section#works > .title {
 
 .sort_btns {
   text-align: center;
-  padding-bottom: 3rem;
   /* outline: 1px solid red; */
 }
 section#works button {
@@ -318,33 +288,25 @@ section#works button {
   outline: none;
 }
 section#works button:hover,
-section#works button.on {
+section#works button.active {
   font-weight: bold;
   font-size: 1.8rem;
 }
 
-#works .item_wrap {
+#works .works_items {
   /* outline: 1px solid blue; */
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 #works .item {
-  /* background: #eeeeee; */
-  font-size: 1.6rem;
-  border: 1px solid #fff;
+  background: #eeeeee;
+  margin-top: 5vh;
   width: 20vmin;
   height: 20vmin;
-  transition: .3s;
 }
-#works .item:hover {
-font-size: 1.8rem;
-font-weight: bold;
-}
-.mobile { background: #F5CEDC;}
-.pc {background: #F5F0C1;}
-.card { background: #EFDAF4;}
-.banner { background: #C1F5C5;}
-.responsive { background: #D8CEF5;}
-.etc { background: #ddd;}
 
 h1.big_typo {
   color: transparent;
@@ -390,7 +352,7 @@ section#contact > .title {
   font-weight: bold;
 
  }
-section#contact > .content {
+section#contact > div {
   /* outline: 1px solid purple; */
   margin-top: 8rem;
   letter-spacing: 0.1rem;
@@ -410,7 +372,6 @@ margin: 15vh 0 20vh 0;
 width: 50rem;
 margin-left: calc((100vw - 50rem)/2);
 font-size: 4.8rem;
-cursor: pointer;
 }
 
 .madeby {
@@ -471,21 +432,19 @@ cursor: pointer;
     text-align: right;
     float: left;
 }
-section#aboutme > .content {
+section#aboutme > div {
   margin-top: 3rem;
-  width: 35vw;
 }
-  section#aboutme > .content,
-  section#skills > .content {
+  section#aboutme > div,
+  section#skills > div {
     display: inline-block;
-    /* outline: 1px solid red; */
+    width: 35vw;
   }
 
-  section#skills > .content {
+  section#skills > div {
     margin-left: 5rem;
-    width: 32vw;
   }
-  #works .item_wrap {
+  #works .works_items {
   width: 60%;
   margin-left: 20%;
   }
@@ -509,15 +468,16 @@ section#aboutme > .content {
     font-size: 9.4rem;
   }
   section#aboutme {
-    height: 120vh;
+    height: 110vh;
   }
   section#skills {
-    height: 110vh;
+    height: 100vh;
   }
   section#aboutme, section#skills {
     padding-top: 20vh;
+    padding-bottom: 10vh;  
   }
-  section#aboutme > .content {
+  section#aboutme > div {
     margin-top: 3rem;
   }
   section#works {
@@ -530,15 +490,15 @@ section#aboutme > .content {
     text-align: right;
     float: left;
 }
-  section#aboutme > .content,
-  section#skills > .content {
+  section#aboutme > div,
+  section#skills > div {
     display: inline-block;
     width: 40vw;
-    }
-  section#skills > .content {
+  }
+  section#skills > div {
     margin-left: 5rem;
   }
-  #works .item_wrap {
+  #works .works_items {
     width: 60%;
     margin-left: 20%;
     }
@@ -606,9 +566,9 @@ section#aboutme > .title,
 section#skills > .title {
 padding: 0;
 }
-section#aboutme > .content,
-section#skills > .content,
-section#contact > .content {
+section#aboutme > div,
+section#skills > div,
+section#contact > div {
   margin-top: 10vh;
 }
 
@@ -617,13 +577,13 @@ section#contact ul {
   padding-left: 1.5rem;
 }
 
-#works .item_wrap {
+#works .works_items {
   width: 100%
   }
 #works .itme {
   margin-top: 20px;
-  width: 25vmin;
-  height: 25vmin;
+  width: 23vmin;
+  height: 23vmin;
 }
 section#works button {
   width: 15rem;
@@ -706,9 +666,9 @@ h1.big_typo {
   bottom: 10vh;
   }
 
-  section#aboutme > .content,
-  section#skills > .content,
-  section#contact > .content {
+  section#aboutme > div,
+  section#skills > div,
+  section#contact > div {
     margin-top: 10vh;
   }
   section#skills ul,
@@ -721,21 +681,21 @@ h1.big_typo {
     width: 18%;
     background: #efefef;
   }
+
   .sort_btns {
     background: #efefef;
   }
-  section#works button:hover,
-  section#works button.on {
+  #works button.active,
+  #works button:hover {
     font-size: 1.4rem;
   }
-  #works .item_wrap {
+  #works .works_items {
     width: 100%;
   }
   #works .item {
-    border: 1px solid #fff;
-    width: 25vmin;
-    height: 25vmin;
-    font-size: 1.4rem;
+    margin-top: 20px;
+    width: 23vmin;
+    height: 23vmin;
   }
 
   .vertical_text {
@@ -750,12 +710,11 @@ h1.big_typo {
     font-size: 4rem;
     -webkit-text-stroke: 1px #7c7c7c;
     text-shadow: 0 1.5rem 0 #e7e7e7;
-    /* padding: 0 1rem; */
   }
   section#contact > .title {
     margin-top: 40rem;
   }
-  section#contact > .content {
+  section#contact > div {
     width: 28rem;
     margin-left: calc((100vw - 28rem)/2);
   }
