@@ -61,13 +61,11 @@ section {
   z-index: 1;
   bottom: 4rem;
   right: 4rem;
-  width: 8rem;
-  height: 8rem;
-  line-height: 8rem;
+  width: 5rem;
+  height: 5rem;
+  line-height: 4.5rem;
   font-size: 2rem;
-  /* font-weight: bold; */
   color: #c9c9c9;
-  border-radius: 30%;
   border: 2px solid #c9c9c9;
   transition: .2s;
 }
@@ -757,12 +755,12 @@ section#contact >.content {
   padding: 0;
   }
   .btn_top {
-  width: 5rem;
-  height: 5rem;
-  line-height: 5rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 3.5rem;
   font-size: 1.4rem;
   right: 1rem;
-  bottom: 10vh;
+  bottom: 1rem;
   }
 
   section#aboutme > .content,
