@@ -1,10 +1,10 @@
 # 포트폴리오 홈페이지 (박나림)
 * 작업기간 : 2020-11-20 ~ (작업중)
-* 반응형으로 제작해보려고 합니다.
-* side nav를 넣을지 고민중입니다.
+* 반응형
 
 # 홈페이지 링크
-https://ddirim.github.io/portfolio/
+[깃허브] https://ddirim.github.io/portfolio/
+[netlify 배포] https://narim-portfolio.netlify.app/
 
 # 페이지 구성
 1. Main
